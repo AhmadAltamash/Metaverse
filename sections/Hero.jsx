@@ -13,6 +13,7 @@ const Hero = () => (
       viewport={
         {once: false, amount: 0.25}
       }
+      //delete
       className={`${styles.innerWidth} mx-auto flex flex-col`}
     >
 
