@@ -19,16 +19,16 @@ const ExploreCard = ({id, imgUrl, title, index, active, handleClick }) => (
     {active !== id ? (
       <h3 className="font-semibold sm:text-[26px] text-[18px] text-white absolute z-0 lg:bottom-20 lg:rotate-[-90deg] lg:origin-[0, 0]">{title}</h3>
     ) : (
-      <div className="absolute bottom-0 p-8 justify-start flex flex-col w-full bg-[rgba(0,0,0,0.5)] rounded-b-[24px]">
-        <div className={`${styles.flexCenter} w-[60px] h-[60px] rounded-[24px] glassmorphism mb-[16px]`}>
+      <div className="absolute bottom-0 p-8 max-tablet:h-20 max-tablet:p-2 max-tablet:px-4 justify-start flex flex-col w-full bg-[rgba(0,0,0,0.5)] rounded-b-[24px]">
+        <div className={`${styles.flexCenter} w-[60px] h-[60px] max-tablet:w-[30px] max-tablet:h-[30px] rounded-[24px] glassmorphism mb-[16px] max-tablet:mb-[4px]`}>
           <img
             src="/headset.svg"
             alt="headset"
             className="w-1/2 h-1/2 object-contain"
           />
         </div>
-        <p className="font-normal text-[16px] leading-20px text-white uppercase">Enter the Metaverse</p>
-        <h2 className="mt-[24px] font-semibold sm:text-[32px] text-[24px] text-white">{title}</h2>
+        <p className="font-normal text-[16px] leading-20px text-white uppercase max-tablet:text-[12px]">Enter the Metaverse</p>
+        <h2 className="mt-[24px] max-tablet:mt-[4px] font-semibold max-tablet:text-[16px] text-[24px] text-white">{title}</h2>
       </div>
     )}
   </motion.div>
