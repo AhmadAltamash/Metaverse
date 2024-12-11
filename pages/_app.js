@@ -1,9 +1,8 @@
 import Head from 'next/head';
 
-import '../styles/globals.css'
-import { Component } from 'react';
+import '../styles/globals.css';
 
-const MyApp = ({ components, pageProps }) => (
+const MyApp = ({ Component, pageProps }) => (
     <>
         <Head>
             <title>Metaversus</title>
@@ -16,4 +15,4 @@ const MyApp = ({ components, pageProps }) => (
     </>
 );
 
-export default MyApp
+export default MyApp;
