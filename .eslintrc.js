@@ -18,34 +18,38 @@ module.exports = {
     'react',
   ],
   rules: {
-    'react/no-unescaped-entities': 0,
-    'eslintreact/no-danger': 0,
-    'react/jsx-max-props-per-line': 0,
-    'react/jsx-first-prop-new-line': 0,
-    'no-console': 0,
-    'jsx-a11y/label-has-associated-control': 0,
-    'no-nested-ternary': 0,
-    'consistent-return': 0,
-    'no-alert': 0,
-    'react/jsx-no-constructed-context-values': 0,
-    'import/extensions': 0,
-    'react/prop-types': 0,
-    'linebreak-style': 0,
-    'react/state-in-constructor': 0,
-    'import/prefer-default-export': 0,
-    'react/react-in-jsx-scope': 'off',
+    'react/no-unescaped-entities': 'off',
+    'react/jsx-max-props-per-line': 'off',
+    'react/jsx-first-prop-new-line': 'off',
+    'no-console': 'warn', // Allow console but show a warning
+    'jsx-a11y/label-has-associated-control': 'off',
+    'no-nested-ternary': 'off',
+    'consistent-return': 'off',
+    'no-alert': 'warn', // Allow alerts but show a warning
+    'react/jsx-no-constructed-context-values': 'off',
+    'import/extensions': 'off',
+    'react/prop-types': 'off',
+    'linebreak-style': ['off'], // Adjust for cross-platform compatibility
+    'react/state-in-constructor': 'off',
+    'import/prefer-default-export': 'off',
+    'react/react-in-jsx-scope': 'off', // Not required for React 17+
     'react/jsx-props-no-spreading': 'off',
     'jsx-a11y/no-noninteractive-element-interactions': 'off',
     'react/function-component-definition': [
-      2,
+      'error',
       {
         namedComponents: 'arrow-function',
         unnamedComponents: 'arrow-function',
       },
     ],
     'max-len': [
-      2,
-      1050,
+      'warn',
+      {
+        code: 120, // Adjust maximum line length
+        ignoreComments: true,
+        ignoreStrings: true,
+        ignoreTemplateLiterals: true,
+      },
     ],
     'no-multiple-empty-lines': [
       'error',
@@ -57,43 +61,32 @@ module.exports = {
     'no-underscore-dangle': [
       'error',
       {
-        allow: [
-          '_d',
-          '_dh',
-          '_h',
-          '_id',
-          '_m',
-          '_n',
-          '_t',
-          '_text',
-        ],
+        allow: ['_id'],
       },
     ],
-    'object-curly-newline': 0,
-    'react/jsx-filename-extension': 0,
-    'react/jsx-one-expression-per-line': 0,
-    'jsx-a11y/click-events-have-key-events': 0,
-    'jsx-a11y/alt-text': 0,
-    'jsx-a11y/no-autofocus': 0,
-    'jsx-a11y/no-static-element-interactions': 0,
-    'react/no-array-index-key': 0,
-    'jsx-a11y/anchor-is-valid': [
-      'error',
-      {
-        components: [
-          'Link',
-        ],
-        specialLink: [
-          'to',
-          'hrefLeft',
-          'hrefRight',
-        ],
-        aspects: [
-          'noHref',
-          'invalidHref',
-          'preferButton',
-        ],
-      },
+    'object-curly-newline': 'off',
+    'react/jsx-filename-extension': [
+      'warn',
+      { extensions: ['.jsx', '.js'] },
     ],
+    'react/jsx-one-expression-per-line': 'off',
+    'jsx-a11y/click-events-have-key-events': 'off',
+    'jsx-a11y/alt-text': 'off',
+    'jsx-a11y/no-autofocus': 'off',
+    'jsx-a11y/no-static-element-interactions': 'off',
+    'react/no-array-index-key': 'off', // Allow with a warning
+    'jsx-a11y/anchor-is-valid': 'off',
+    'jsx-quotes': 'off',
+    'react/jsx-indent': 'off',
+    'no-trailing-spaces': 'off',
+    'quotes': ['warn', 'single', { avoidEscape: true }], // Enforce single quotes with exceptions
+    'react/jsx-tag-spacing': 'off',
+    'eol-last': ['error', 'always'], // Ensure newline at end of file
+    'arrow-spacing': ['error', { before: true, after: true }], // Require space before and after =>
+    'semi': ['error', 'always'], // Enforce semicolons
+    'object-curly-spacing': ['error', 'always'], // Require spacing inside curly braces
+    'space-infix-ops': ['error', { int32Hint: false }], // Enforce spaces around infix operators
+    'lines-around-directive': ['error', { before: 'always', after: 'always' }], // Ensure newlines around directives
+    'import/order': ['error', { alphabetize: { order: 'asc' } }], // Alphabetize imports
   },
 };
